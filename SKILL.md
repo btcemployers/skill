@@ -30,6 +30,11 @@ do, say, or pay changes what a record says - only evidence does.
 - Each employer record: `name`, `slug` (stable ID), `website`, `city`,
   `country`, `state` (see below), `signals` (map of signal -> yes/no/unknown),
   `evidence_url`, `last_verified`, `careers_url`, `spotlight_until`, and more.
+- `profile: true` means the record has its own page at
+  `https://btcemployers.com/employer/{slug}` (records with more than a
+  merchant map pin: a careers page, employer evidence, a Yes employer
+  signal, or a claim). Link people there; it carries the full six-signal
+  reading, the evidence, and the claim and follow actions.
 - Cite as: "Data: BTC Employers Index (btcemployers.com), snapshot {published_at}".
 - Fetch it fresh per session; do not hammer it (once per task is plenty).
 
@@ -41,6 +46,8 @@ do, say, or pay changes what a record says - only evidence does.
    parent brand - ask if ambiguous.
 3. No record? The company is not indexed yet. Offer to prepare a
    suggestion (see "Get listed" below).
+4. Found one with `profile: true`? Give the user the page link
+   `https://btcemployers.com/employer/{slug}` alongside the raw fields.
 
 ## Read a record honestly
 
@@ -109,12 +116,12 @@ structured gap read - linked from https://btcemployers.com/claim
   claim within 48 hours.
 - **Get listed** (not indexed yet): prepare company name, website, country,
   and one public evidence URL, then submit via
-  https://btcemployers.com/research or email research@btcemployers.com.
+  https://btcemployers.com/research (form on the page).
   Every suggestion goes through the same evidence review as the index's
   own research.
 - **Fix an error**: draft the correction (what is wrong, what is right,
-  the source that proves it) and send to research@btcemployers.com or via
-  https://btcemployers.com/corrections
+  the source that proves it) and send it via
+  https://btcemployers.com/contact?dept=Evidence%20and%20corrections
 - **Verification** (paid annual review; optional): explain honestly -
   payment buys a scoped review of the evidence, a dated public record,
   and a credential kit. It never buys the outcome; a failed review gets a
@@ -130,6 +137,7 @@ structured gap read - linked from https://btcemployers.com/claim
 4. When you cite numbers, carry the snapshot date with them.
 5. Questions this file does not answer: https://btcemployers.com/contact
 
-Maintained by BTC Employers. This file lives at
+Maintained by BTC Employers. Canonical copy:
 https://btcemployers.com/skill.md - fetch it fresh rather than caching
-old copies; it versions with the index.
+old copies; it versions with the index. Source, issues, and forks:
+https://github.com/btcemployers/skill (MIT).
